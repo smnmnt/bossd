@@ -8,7 +8,7 @@ namespace Controllers;
 
 use Models\Articles\Article;
 use Models\Users\User;
-
+use Models\Comments\Comment;
 
 use View\View;
 
@@ -72,7 +72,9 @@ class ArticlesController
 
         $author = User::getById($article->getAuthorId());
 
-        $this->view->renderHtml('articles/show.php', ['article' => $article, 'author' => $author]);
+        $comments = Comment::getAllWhere($articleId);
+
+        $this->view->renderHtml('articles/show.php', ['article' => $article, 'author' => $author, 'comments' => $comments]);
 
     }
     public function edit(int $articleId): void

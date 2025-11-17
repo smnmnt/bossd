@@ -130,7 +130,7 @@ abstract class ActiveRecordEntity
 
         $sql = 'UPDATE ' . static::getTableName() . ' SET ' . implode(', ', $columns2params) . ' WHERE id = ' . $this->id;
 
-        $db = Db::getInstance();
+        $db = DB::getInstance();
 
         $db->query($sql, $params2values, static::class);
 
@@ -177,7 +177,7 @@ abstract class ActiveRecordEntity
 
 
 
-        $db = Db::getInstance();
+        $db = DB::getInstance();
 
         $db->query($sql, $params2values, static::class);
 
@@ -187,7 +187,7 @@ abstract class ActiveRecordEntity
 
     {
 
-        $db = Db::getInstance();
+        $db = DB::getInstance();
 
         $db->query(
 
@@ -207,7 +207,7 @@ abstract class ActiveRecordEntity
 
     {
 
-        $db = Db::getInstance();
+        $db = DB::getInstance();
 
         return $db->query('SELECT * FROM `' . static::getTableName() . '`;', [], static::class);
 
@@ -217,7 +217,7 @@ abstract class ActiveRecordEntity
 
     {
 
-        $db = Db::getInstance();
+        $db = DB::getInstance();
 
         $entities = $db->query(
 
