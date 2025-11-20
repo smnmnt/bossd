@@ -1,65 +1,63 @@
-.layout {
-
-    width: 100%;
-
-    max-width: 1024px;
-
-    margin: auto;
-
-    background-color: white;
-
-    border-collapse: collapse;
-
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-
-
-.layout tr td {
-
-    padding: 20px;
-
-    vertical-align: top;
-
-    border: solid 1px gray;
-
+.container {
+    flex: 1;
 }
 
-
-
-.header {
-
-    font-size: 30px;
-
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-
-
-.footer {
-
-    text-align: center;
-
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
-
-
-.sidebarHeader {
-
-    font-size: 20px;
-
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
 }
 
-
-
-.sidebar ul {
-
-    padding-left: 20px;
-
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
 }
 
+.btn-group .btn {
+    margin-right: 0;
+}
 
+.navbar-brand {
+    font-size: 1.5rem;
+}
 
-a, a:visited {
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
 
-    color: darkgreen;
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 1) !important;
+}
 
+.btn-dark {
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.btn-dark:hover {
+    background-color: #424649;
+    border-color: #373b3e;
+}
+
+.card-header.bg-dark {
+    background-color: #212529 !important;
+}
+
+footer {
+    margin-top: auto;
 }
