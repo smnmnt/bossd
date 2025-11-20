@@ -33,8 +33,6 @@ class ArticlesController
     public function add(): void
 
     {
-        $this->view->renderHtml('articles/create.php', ['title' => 'Создание']);
-
         $author = User::getById(1);
 
         if (!empty($_POST)) {
@@ -47,6 +45,7 @@ class ArticlesController
             $text = $_POST['FormControlText'] ?? '';
 
             if ($name === '' || $text === '') {
+                $this->view->renderHtml('articles/create.php', ['title' => 'Создание']);
                 return;
             }
 
@@ -55,9 +54,11 @@ class ArticlesController
 
             $article->save();
 
-            header('Location: /www/');
+            header('Location: /article/'. $article->getId());
             exit;
         }
+
+        $this->view->renderHtml('articles/create.php', ['title' => 'Создание']);
 
     }
     public function show(int $articleId): void

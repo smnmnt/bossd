@@ -15,7 +15,7 @@
         <h3 class="mb-4">Комментарии</h3>
         <div class="row">
             <?php foreach ($comments as $comment): ?>
-                <div class="col-md-6 col-lg-4 mb-3">
+                <div class="col-md-6 col-lg-4 mb-3" id="comment<?= $comment->getId(); ?>">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title mb-2"><?= htmlspecialchars($comment->getAuthor()->getNickName()); ?></h5>

@@ -61,3 +61,7 @@ body {
 footer {
     margin-top: auto;
 }
+
+html {
+    scroll-behavior: smooth;
+}

@@ -56,7 +56,7 @@ class CommentsController
 
             $comment->save();
 
-            header('Location: /article/'. $article->getId());
+            header('Location: /article/'. $article->getId() . '#comment' . $comment->getId());
             exit;
         }
 

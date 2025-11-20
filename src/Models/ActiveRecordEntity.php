@@ -181,6 +181,8 @@ abstract class ActiveRecordEntity
 
         $db->query($sql, $params2values, static::class);
 
+        $this->id = $db->getLastInsertId();
+
     }
 
     public function delete(): void
